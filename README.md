@@ -9,3 +9,7 @@ Because of uncertain rule of spacing and the complicated structure above, which 
 
 ### Why we build it?
 
+
+Ref:
+- http://www.apsipa.org/proceedings_2014/Data/paper/1406.pdf
+- http://niptict.edu.kh/wp-content/uploads/2016/05/Khmer-Word-Segmentation-Using-Conditional-Random-Fields-edit.pdf
