@@ -19,6 +19,8 @@ Ref:
 - https://github.com/silnrsi/khmerlbdict
 
 ### Plan
+- Fit word into model
+
 - Read word from file
 - Remove space from text
 - Splite word into charater
