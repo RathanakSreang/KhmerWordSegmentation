@@ -20,13 +20,14 @@ Ref:
 
 ### Plan
 - Fit word into model
+- English, other beside khmer words
+- Number
 
 - Read word from file
 - Remove space from text
 - Splite word into charater
 - Fit into Trie node.
 -
-
 
 ### About file and function:
 
