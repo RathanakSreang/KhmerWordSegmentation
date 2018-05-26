@@ -1,5 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+# This file use to get Khmer word from tsv and save in other file
+
 import pandas as pd
 import numpy as np
 from codecs import open
