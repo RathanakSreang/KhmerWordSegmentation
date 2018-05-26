@@ -23,3 +23,8 @@ Ref:
 - Splite word into charater
 - Fit into Trie node.
 -
+
+
+### About file and function:
+
+- `parse_tsv_word.py`: read `-f` Tab-separated file and get first coloum then save into file `-o`
