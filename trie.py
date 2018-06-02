@@ -32,6 +32,17 @@ class Trie:
       current = node
     return current["isEndOfWord"]
 
+  def searchWordPrefix(self, word):
+    current = self.root
+    for ch in word:
+      if not current["children"].has_key(ch):
+        return False
+      node = current["children"][ch]
+
+      current = node
+    # return True if children contain keys and values
+    return bool(current["children"])
+
   def deleteWord(self, word):
     self._delete(self.root, word, 0)
 
