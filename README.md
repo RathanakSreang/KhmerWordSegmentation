@@ -1,8 +1,7 @@
 # KhmerWordSegmentation
 
 ### Problem
-Unlike other languages, Khmer Word Segmentation are way more complected.
-Because Khmer language does not have any standard rule on how we are using space to separate between each word(space are use for easier reading). Moreover, Khmer word can have difference meaning with order of words when it will form. Khmer word could also be a join of two or more Khmer words together.
+Unlike other languages, Khmer Word Segmentation is way more complected. Because the Khmer language does not have any standard rule on how we are using space to separate between each word(space are used for easier reading). Moreover, Khmer word can have different meaning with the order of words when it will form. Khmer word could also be a join of two or more Khmer words together.
 
 
 Because of uncertain rule of spacing and the complicated structure above, which it is hard to segment Khmer Word.
@@ -38,5 +37,7 @@ Ref:
 - `train_model.py` use for train khmer words to Trie model and save it as `pkl` file
 - `test_model.py` use for test the train model
 
-* important one
+
+** important one
+
 - `word_segmentation.py` for separate word.
