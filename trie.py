@@ -13,7 +13,8 @@ class Trie:
     current = self.root
     for ch in word:
 
-      if current["children"].has_key(ch):
+      # if current["children"].has_key(ch):
+      if ch in current["children"]:
         node = current["children"][ch]
       else:
         node = self.getNode()
@@ -25,7 +26,7 @@ class Trie:
   def searchWord(self, word):
     current = self.root
     for ch in word:
-      if not current["children"].has_key(ch):
+      if ch not in current["children"]:
         return False
       node = current["children"][ch]
 
@@ -35,7 +36,7 @@ class Trie:
   def searchWordPrefix(self, word):
     current = self.root
     for ch in word:
-      if not current["children"].has_key(ch):
+      if ch not in current["children"]:
         return False
       node = current["children"][ch]
 
@@ -54,7 +55,8 @@ class Trie:
       return len(current["children"].keys()) == 0
 
     ch = word[index]
-    if not current["children"].has_key(ch):
+    # if not current["children"].has_key(ch):
+    if ch not in current["children"]:
       return False
     node = current["children"][ch]
 
