@@ -65,7 +65,7 @@ class WordSegmentation:
 
     return ""
 
-  def start(self):
+  def parse(self):
     while(self.startIndex < len(self.text)):
       ch = self.text[self.startIndex]
       ch = ch.encode('utf-8')
@@ -101,16 +101,16 @@ class WordSegmentation:
 
   def show(self):
     print('Text: ' + self.text)
-    print('A word: [' + ', '.join(self.result) + ']')
-    print('Not a word: [' + ', '.join(self.leftover) + ']')
+    print('Words: [' + ', '.join(self.result) + ']')
+    print('Not words: [' + ', '.join(self.leftover) + ']')
 
 
+# kh_text = "អ្នកចេះនិយាយភាសាខ្មែរទេ?"
 # kh_text = "ចំណេះ​ដឹង​វិទ្យាសាស្ត្រ​ជា​ចំណុច​គាំទ្រ​ដ៏​សំខាន់​មួយ​ក្នុង​ការ​អភិវឌ្ឍ​សេដ្ឋកិច្ច​សង្គម។ "
 kh_text = "ដឹង​វិទ្យាសាស្ត្រ​ជា​ចំណុច​គាំទ្រ​ដ៏​សំខាន់​មួយ​ក្នុង​ការ​អភិវឌ្ឍ​សេដ្ឋកិច្ច​សង្គម។"
 # kh_text = "កំពុងលុបការឃោសនារបស់ពួកជ្រុលនិយមលឿនជាងបច្ចុប្បន្ន បើមិនដូច្នេះទេ"
-# kh_text = "អ្នកចេះនិយាយភាសាខ្មែរទេ?"
 # kh_text = "សហភាពអឺរ៉ុបបានផ្ដល់ពេល៣ខែឲ្"
 
 word_segment = WordSegmentation(kh_text)
-word_segment.start()
+word_segment.parse()
 word_segment.show()
