@@ -10,8 +10,9 @@ class WordSegmentation:
     self.text = text.decode('utf-8')
     self.model = trie.Trie()
     self.model.load_from_pickle("train_data")
-    self.result = []
-    self.leftover = []
+    # self.result = []
+    self.result_all = []
+    # self.leftover = []
     self.startIndex = 0
 
   def isNumber(self, ch):
@@ -65,7 +66,7 @@ class WordSegmentation:
 
     return ""
 
-  def parse(self):
+  def check_words(self):
     while(self.startIndex < len(self.text)):
       ch = self.text[self.startIndex]
       ch = ch.encode('utf-8')
@@ -80,15 +81,18 @@ class WordSegmentation:
 
       length = len(word.decode('utf-8'))
       if length == 0:
-        self.leftover.append(ch.decode('utf-8'))
+        self.result_all.append(ch.decode('utf-8'))
         self.startIndex += 1
         continue
 
+      result = {}
       if self.model.searchWord(word) or self.isNumber(ch) or self.isEnglish(ch):
-        self.result.append(word.decode('utf-8'))
+        self.result_all.append()
+        result["text"] = word.decode('utf-8')
       else:
-        self.leftover.append(word.decode('utf-8'))
+        result["text"] = word.decode('utf-8')
 
+      self.result_all.append(result)
       self.startIndex += length
 
     # # write to file
@@ -101,16 +105,16 @@ class WordSegmentation:
 
   def show(self):
     print('Text: ' + self.text)
-    print('Words: [' + ', '.join(self.result) + ']')
-    print('Not words: [' + ', '.join(self.leftover) + ']')
+    print('After check : [' + ', '.join(self.result_all) + ']')
 
 
 # kh_text = "អ្នកចេះនិយាយភាសាខ្មែរទេ?"
 # kh_text = "ចំណេះ​ដឹង​វិទ្យាសាស្ត្រ​ជា​ចំណុច​គាំទ្រ​ដ៏​សំខាន់​មួយ​ក្នុង​ការ​អភិវឌ្ឍ​សេដ្ឋកិច្ច​សង្គម។ "
-kh_text = "ដឹង​វិទ្យាសាស្ត្រ​ជា​ចំណុច​គាំទ្រ​ដ៏​សំខាន់​មួយ​ក្នុង​ការ​អភិវឌ្ឍ​សេដ្ឋកិច្ច​សង្គម។"
+# kh_text = "ដឹង​វិទ្យាសាស្ត្រ​ជា​ចំណុច​គាំទ្រ​ដ៏​សំខាន់​មួយ​ក្នុង​ការ​អភិវឌ្ឍ​សេដ្ឋកិច្ច​សង្គម។"
 # kh_text = "កំពុងលុបការឃោសនារបស់ពួកជ្រុលនិយមលឿនជាងបច្ចុប្បន្ន បើមិនដូច្នេះទេ"
 # kh_text = "សហភាពអឺរ៉ុបបានផ្ដល់ពេល៣ខែឲ្"
+kh_text = "ខាងក្រុមហ៊ុនរបស់យើងខ្ញុំត្រូវការជ្រើសរើសនិសិ្សតកម្ពុជាយើងដែលកំពុងរៀនផ្នែកពត័មានវិទ្យានិងផ្នែកទូរគមនាគមន៍"
 
 word_segment = WordSegmentation(kh_text)
-word_segment.parse()
+word_segment.check_words()
 word_segment.show()
