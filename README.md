@@ -1,4 +1,4 @@
-# KhmerWordSegmentation
+# KhmerWordSegmentation(NLP)
 
 ### Problem
 Unlike other languages, Khmer Word Segmentation is way more complected. Because the Khmer language does not have any standard rule on how we are using space to separate between each word(space are used for easier reading). Moreover, Khmer word can have different meaning with the order of words when it will form. Khmer word could also be a join of two or more Khmer words together.
@@ -18,6 +18,12 @@ Ref:
 - https://github.com/silnrsi/khmerlbdict
 
 ### Plan
+#### 1.Build web site for:
+- word segmentations: user to input string of sentences and submit then it response with list of words in those sentences.
+- words checking: user submit sentences then it response with sentences and some suggestion word
+- words contribution: allow user input Khmer words with it function(noun, verb,...) then we use it to train our model
+
+<!--
 - Fit word into model
 - English, other beside khmer words
 - Number
@@ -28,16 +34,4 @@ Ref:
 - Fit into Trie node.
 
 - It should know Khmer words or not khmer words(English or other ..)
-
-### About file and function:
-
-- `trie.py` model class
-- `read_ch_in_word.py` for testing read unicode charater in words.
-- `parse_tsv_word.py`: read `-f` Tab-separated file and get first coloum then save into file `-o`
-- `train_model.py` use for train khmer words to Trie model and save it as `pkl` file
-- `test_model.py` use for test the train model
-
-
-** important one
-
-- `word_segmentation.py` for separate word.
+ -->
